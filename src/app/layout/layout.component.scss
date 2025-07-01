@@ -1,0 +1,35 @@
+:host {
+  /* Área visible al 100 % */
+  display: grid;
+  min-height: 100dvh;
+
+
+  /*  🅰 header | 🅱 sidebar | 🅲 main | 🅳 footer  */
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+
+  /* Cambia fracciones según tu diseño */
+  grid-template-columns:1f;
+  grid-template-rows: 4em 10rem 10rem;
+  
+}
+
+/* Mapea elementos a sus áreas */
+header      { grid-area: header; }
+aside       { grid-area: sidebar; }
+main        { grid-area: main;   }
+footer      { grid-area: footer; }
+
+/* Responsivo rápido */
+@media (max-width: 768px) {
+  :host {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
