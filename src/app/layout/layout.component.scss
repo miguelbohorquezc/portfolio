@@ -6,21 +6,24 @@
 
   /*  🅰 header | 🅱 sidebar | 🅲 main | 🅳 footer  */
   grid-template-areas:
-    "header  header"
+    "sidebar  header"
     "sidebar main"
-    "footer  footer";
+    "sidebar  footer";
 
   /* Cambia fracciones según tu diseño */
-  grid-template-columns:1f;
-  grid-template-rows: 4em 10rem 10rem;
+  grid-template-columns:auto 1fr;
+  grid-template-rows: 4em 10rem 4em ;
   
 }
 
 /* Mapea elementos a sus áreas */
 header      { grid-area: header; }
-aside       { grid-area: sidebar; }
+aside       { grid-area: sidebar; 
+              background: #f3f3f3;
+              border-radius: 10px; }
 main        { grid-area: main;   }
 footer      { grid-area: footer; }
+
 
 /* Responsivo rápido */
 @media (max-width: 768px) {

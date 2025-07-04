@@ -1,0 +1,10 @@
+<nav class="navbar">
+  <div class="navbar-right">
+    <div class="user-dropdown" (click)="toggleDropdown()">
+      👤 Usuario ▾
+      <ul class="dropdown-menu" *ngIf="dropdownOpen">
+        <li (click)="logout()">🚪 Cerrar sesión</li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<div class="logo-area">
+  <span *ngIf="!isCollapsed">🤖</span>
+  <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+</div>
+
+<nav class="menu">
+  <ul>
+    <li>
+      <span *ngIf="!isCollapsed">🏠 Dashboard</span>
+    </li>
+    <li>
+      <span (click)="toggleSubmenu('usuarios')">
+        👤 <span *ngIf="!isCollapsed">Usuarios</span>
+      </span>
+      <ul class="submenu" [class.open]="openMenus['usuarios'] && !isCollapsed">
+        <li>➕ Nuevo</li>
+        <li>📋 Listado</li>
+      </ul>
+    </li>
+    <li>
+      <span (click)="toggleSubmenu('reportes')">
+        📊 <span *ngIf="!isCollapsed">Reportes</span>
+      </span>
+      <ul class="submenu" [class.open]="openMenus['reportes'] && !isCollapsed">
+        <li>📈 Mensual</li>
+        <li>📉 Anual</li>
+      </ul>
+    </li>
+  </ul>
+</nav>
